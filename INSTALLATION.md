@@ -162,18 +162,6 @@ pip install ../chia-blockchain/
 sudo CHIA_ROOT="/home/user/.chia/testnet7" ./venv/bin/python pool/pool_server.py
 ```
 
-##### ERROR https://github.com/Chia-Network/pool-reference/issues/44
-Seems to be reoslve with https://github.com/Chia-Network/pool-reference/commit/f3488596b1773dfa7ac900ce67d3f0d68b55e097
->>>
-FileNotFoundError: [Errno 2] No such file or directory: '/home/user/pool-reference/venv/lib/python3.8/site-packages/chia/wallet/puzzles/pool_escaping_innerpuz.clvm.hex'
->>>
-```
-cd venv/lib/python3.8/site-packages/chia/wallet/puzzles/
-wget https://raw.githubusercontent.com/Chia-Network/chia-blockchain/d72452c5c7c468df24a093d24617cf1e57dedf3e/chia/wallet/puzzles/pool_escaping_innerpuz.clvm
-cd ~/pool-reference
-sudo CHIA_ROOT="/home/user/.chia/testnet7" ./venv/bin/python pool/pool_server.py
-```
-
 ### 13. Start a farmer on the chia-blockchain and create a key for your farmer (skip at update)
 ```
 chia keys generate
