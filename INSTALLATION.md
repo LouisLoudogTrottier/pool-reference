@@ -167,20 +167,21 @@ sudo CHIA_ROOT="/home/user/.chia/testnet7" ./venv/bin/python pool/pool_server.py
 chia keys generate
 chia keys show
 ```
->>>
+```
     ## USE THE 3RD KEY AS THE FARMER KEY
     Fingerprint: 1357477852
     Master public key (m): b35976dc9cc[...]
     Farmer public key (m/12381/8444/0/0):    adcc9871d21f[...]
     Pool public key (m/12381/8444/1/0): a3817aa42b811da67[...]
     First wallet address: txch19k7z58kjc360rm93vyru992hh7wgxuf2nl9mh3qeyz8yjfpwxvksae0vqy	## NOTE THIS 3RD ADDRESS
->>>
+```
+
 Visit http://chia-faucet.com/ and enter the farmer's (3rd) wallet address to get some TXCH needed for the singleton
 - Make sure you sent 1 full coin because you can only use it once.
 
 ##### HINT
 - Wait your wallet to Sync, use `watch "chia wallet show -f 1357477852"` to watch the process (change the fingerprint number by yours)
->>>
+```
 Choose wallet key:
 1) 400991747
 2) 214632651
@@ -193,15 +194,14 @@ Wallet ID 1 type STANDARD_WALLET
    -Total Balance: 0.0 txch (0 mojo)
    -Pending Total Balance: 0.0 txch (0 mojo)
    -Spendable: 0.0 txch (0 mojo)
->>>
-
+```
 
 ### 14. Create a singleton and verify it's created, don't forget to associate the farmer's wallet with -f
 ```
 chia plotnft create -u 192.168.0.250:80 -f 1357477852
 chia plotnft show
 ```
->>>
+```
 Choose wallet key:
 1) 400991747
 2) 214632651
@@ -220,18 +220,19 @@ Will create a plot NFT and join pool: 10.0.0.123:80.
 Confirm [n]/y: y
 Transaction submitted to nodes: [('33834fbb01f9f84f1070e8630c0e3469369d6ae67c7cadffc473eb23b7de549d', 1, None)]
 Do chia wallet get_transaction -f 1357477852 -tx 0xd6f0e5b30a4995bf8291ea81898f237b19e0005a7acb0c11a285b56994ce72c8 to get status
->>>
+```
+
 ```
 chia wallet get_transaction -f 1357477852 -tx 0xd6f0e5b30a4995bf8291ea81898f237b19e0005a7acb0c11a285b56994ce72c8  ## FROM ABOVE
 ```
->>> 
+
+``` 
 Transaction d6f0e5b30a4995bf8291ea81898f237b19e0005a7acb0c11a285b56994ce72c8
 Status: Confirmed
 Amount: 1E-12 txch
 To address: txch1c809tu2j7cl6n4g97hxh55cj0fvc2vp9q9gs2rczvxtsrm04kg2q0hqzsd    ## NOTE THIS ADDR
 Created at: 2021-06-05 15:52:04
-
->>>
+```
 
 ### 15. Start creating Plots using the singleton wallet address
 ```
